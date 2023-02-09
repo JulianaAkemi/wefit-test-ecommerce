@@ -2,11 +2,11 @@ import Image from 'next/image';
 import { SButton } from './styles';
 
 interface ButtonProps {
-  width: string;
+  width?: string;
   onClick: () => void;
-  icon: string;
-  altText: string;
-	quantity: number;
+  icon?: string;
+  altText?: string;
+	quantity?: number;
   label: string;
 }
 
@@ -20,7 +20,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <SButton quantity={quantity} width={width} onClick={onClick}>
-      <Image src={icon} alt={altText} />
+      {icon && altText ? <Image src={icon} alt={altText} /> : null}
 
 			<p>{quantity}</p>
 

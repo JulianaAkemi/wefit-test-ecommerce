@@ -14,6 +14,7 @@ export const SButton = styled.div.attrs(
   color: ${colors.grey000};
   border-radius: 4px;
   font-size: 12px;
+	padding: 11px;
 
   p:first-of-type {
     margin-left: 5px;
