@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Button from 'components/Button';
 import CartItem from './components/CartItem';
+import formatCurrency from '../../utils/formatCurrency';
 import { SCartOrder, SHeader, SCartFooter, STotal } from './styles';
 
 interface CartOrdermProps {
@@ -14,7 +15,9 @@ const CartOrder = ({ title, image, price }: CartOrdermProps) => {
     <SCartOrder>
       <SHeader>
         <p>PRODUTO</p>
+
         <p>QTD</p>
+
         <p>SUBTOTAL</p>
       </SHeader>
 
@@ -23,7 +26,7 @@ const CartOrder = ({ title, image, price }: CartOrdermProps) => {
       <SCartFooter>
         <STotal>
           <p>TOTAL</p>
-          <p>{price}</p>
+          <p>{formatCurrency(price)}</p>
         </STotal>
 
         <Link href="/checkout-success">

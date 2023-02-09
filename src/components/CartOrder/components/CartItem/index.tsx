@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Subtotal from '../Subtotal';
+import formatCurrency from '../../../../utils/formatCurrency';
 import TrashCan from '../../../../../assets/TrashCan.svg';
 import { SCartItem, SItemInfo, SImageWrapper, STitle } from './styles';
 
@@ -19,7 +20,7 @@ const CartItem = ({ title, image, price }: CartItemProps) => {
       <SItemInfo>
         <STitle>
           <p>{title}</p>
-          <p>R$ {price}</p>
+          <p>{formatCurrency(price)}</p>
         </STitle>
 
         <Image
