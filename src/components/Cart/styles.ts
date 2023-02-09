@@ -14,7 +14,7 @@ export const SCartItems = styled.div`
   margin-right: 8px;
   font-weight: 600;
 
-  p:first-of-type {
+  & > p:first-of-type {
     display: none;
     font-size: 14px;
 
@@ -23,7 +23,7 @@ export const SCartItems = styled.div`
     }
   }
 
-  p:nth-child(2) {
+  & > p:nth-child(2) {
     font-size: 12px;
     color: ${colors.grey200};
   }

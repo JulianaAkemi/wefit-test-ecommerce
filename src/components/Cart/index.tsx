@@ -12,7 +12,7 @@ const Cart = () => {
           <p>0 itens</p>
         </SCartItems>
 
-        <Image src={CartSVG} alt="Carrinho de Compras" />
+        <Image src={CartSVG} alt="Carrinho de Compras" width={32} height={32} />
       </SCart>
     </Link>
   );
