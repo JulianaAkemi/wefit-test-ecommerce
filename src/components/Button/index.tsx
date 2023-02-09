@@ -3,7 +3,7 @@ import { SButton } from './styles';
 
 interface ButtonProps {
   width?: string;
-  onClick: () => void;
+  onClick?: () => void;
   icon?: string;
   altText?: string;
 	quantity?: number;

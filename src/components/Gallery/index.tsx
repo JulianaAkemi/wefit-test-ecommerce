@@ -2,7 +2,7 @@ import ProductCard from 'components/ProductCard';
 import { SGallery } from './styles';
 
 interface GalleryProps {
-  products: [{ title: string; image: string; id: number }];
+  products: Array<{ title: string; image: string; id: number }>;
 }
 
 const Gallery = ({ products }: GalleryProps) => {

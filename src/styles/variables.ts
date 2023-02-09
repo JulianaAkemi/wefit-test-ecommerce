@@ -9,6 +9,6 @@ export const colors = {
 };
 
 export const screenSize = {
-  small: '375px',
+  small: '376px',
   medium: '960px',
 };
