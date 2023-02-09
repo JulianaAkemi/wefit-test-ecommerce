@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors, screenSize } from '../../styles/variables';
 
-export const SCheckoutSuccess = styled.main`
+export const SCheckoutSuccess = styled.div`
   display: flex;
 	flex-direction: column;
 	align-items: center;

@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+	
+	compiler: {
+    styledComponents: true,
+  },
 
   images: {
     domains: ['wefit-react-web-test.s3.amazonaws.com'],
