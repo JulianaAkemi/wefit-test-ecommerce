@@ -1,17 +1,11 @@
-import Head from 'next/head';
-import Header from '../components/Header';
-import { SPageBackground } from 'styles/pages/styles';
+import Loader from '../components/Loader';
+import Gallery from '../components/Gallery';
+import { useProducts } from '../hooks/useProducts';
 
-export default function Home() {
-  return (
-    <SPageBackground>
-      <Head>
-        <title>WeMovies</title>
-      </Head>
+const Home = () => {
+  const { products, loading } = useProducts();
 
-      <Header />
+  return <>{loading ? <Loader /> : <Gallery products={products} />}</>;
+};
 
-      {/* <Gallery/> */}
-    </SPageBackground>
-  );
-}
+export default Home;

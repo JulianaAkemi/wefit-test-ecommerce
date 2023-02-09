@@ -1,12 +1,13 @@
-import Header from 'components/Header';
 import type { AppProps } from 'next/app';
+import Header from 'components/Header';
+import { ProductsProvider } from "../contexts/ProductsContext";
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ProductsProvider>
       <Header />
       <Component {...pageProps} />
-    </>
+    </ProductsProvider>
   );
 }
