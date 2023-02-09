@@ -17,8 +17,8 @@ export const SButton = styled.div.attrs(
 	padding: 11px;
 
   p:first-of-type {
-    margin-left: ${(props) => (props.quantity ? '5px' : 0)};
-    margin-right: ${(props) => (props.quantity ? '13px' : 0)};
+    margin-left: ${(props) => (typeof props.quantity === 'number' ? '5px' : 0)};
+    margin-right: ${(props) => (typeof props.quantity === 'number' ? '13px' : 0)};
     font-weight: 400;
   }
 

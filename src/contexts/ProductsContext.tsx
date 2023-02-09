@@ -5,7 +5,7 @@ import { Product } from '../types/product.types';
 export interface ProductsContextType {
   products: Product[];
   loading: boolean;
-  updateCurrentProducts: (currentProducts: Product[]) => void;
+  updateCurrentItems: (currentProducts: Product[]) => void;
 }
 
 interface ProductsProviderProps {
@@ -29,13 +29,13 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
     fetchProducts();
   }, []);
 
-  const updateCurrentProducts= (currentProducts: Product[]) => {
+  const updateCurrentItems= (currentProducts: Product[]) => {
     setProducts([...currentProducts]);
   }
 
   return (
     <ProductsContext.Provider
-      value={{ products, loading, updateCurrentProducts }}>
+      value={{ products, loading, updateCurrentItems }}>
       {children}
     </ProductsContext.Provider>
   );
