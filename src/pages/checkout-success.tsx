@@ -1,9 +1,11 @@
 import CheckoutSuccess from '../components/CheckoutSuccess';
 
-export default function Home() {
+const CheckoutSuccessPage = () => {
   return (
     <>
       <CheckoutSuccess />
     </>
   );
-}
+};
+
+export default CheckoutSuccessPage;
