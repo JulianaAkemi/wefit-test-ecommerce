@@ -47,6 +47,10 @@ export const SItemInfo = styled.div`
 
   & > img {
     align-self: flex-end;
+
+		&:hover {
+			cursor: pointer;
+		}
   }
 
   @media (min-width: ${screenSize.medium}) {

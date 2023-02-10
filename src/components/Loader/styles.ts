@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, screenSize } from '../../styles/variables';
+import { screenSize } from '../../styles/variables';
 
 export const SLoader = styled.div`
   height: calc(100vh - 68px);

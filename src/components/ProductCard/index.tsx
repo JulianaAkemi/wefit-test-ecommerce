@@ -1,15 +1,20 @@
 import Image from 'next/image';
-import { SProductCard } from './styles';
-import AddToCart from '../../../assets/addToCart.svg';
 import Button from 'components/Button';
+import { useCart } from 'hooks/useCart';
+import { Product } from 'types/product.types';
+import AddToCart from '../../../assets/addToCart.svg';
+import { SProductCard } from './styles';
 
 interface ProductCardProps {
   title: string;
   productQuantity: number;
   image: string;
+	product: Product;
 }
 
-const ProductCard = ({ title, productQuantity, image }: ProductCardProps) => {
+const ProductCard = ({ title, productQuantity, image, product }: ProductCardProps) => {
+	const { addItem } = useCart();
+
   return (
     <SProductCard>
       <Image width={147} height={188} src={image} alt={title} />
@@ -17,7 +22,7 @@ const ProductCard = ({ title, productQuantity, image }: ProductCardProps) => {
       <p>{title}</p>
 
       <Button
-        onClick={() => {}}
+        onClick={() => {addItem(product)}}
         icon={AddToCart}
         altText={'Adicionar ao Carrinho'}
         label={

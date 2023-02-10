@@ -1,16 +1,13 @@
 import Link from 'next/link';
 import Button from 'components/Button';
 import CartItem from './components/CartItem';
+import { useCart } from '../../hooks/useCart';
 import formatCurrency from '../../utils/formatCurrency';
 import { SCartOrder, SHeader, SCartFooter, STotal } from './styles';
 
-interface CartOrdermProps {
-  title: string;
-  image: string;
-  price: number;
-}
+const CartOrder = () => {
+  const { cartOrder, clearCart, total } = useCart();
 
-const CartOrder = ({ title, image, price }: CartOrdermProps) => {
   return (
     <SCartOrder>
       <SHeader>
@@ -21,15 +18,17 @@ const CartOrder = ({ title, image, price }: CartOrdermProps) => {
         <p>SUBTOTAL</p>
       </SHeader>
 
-      <CartItem title={title} price={price} image={image} />
+      {cartOrder.map((item) => (
+        <CartItem product={item} key={item.id} />
+      ))}
 
       <SCartFooter>
         <STotal>
           <p>TOTAL</p>
-          <p>{formatCurrency(price)}</p>
+          <p>{formatCurrency(total)}</p>
         </STotal>
 
-        <Link href="/checkout-success">
+        <Link href="/checkout-success" onClick={() => clearCart()}>
           <Button label={'FINALIZAR PEDIDO'} />
         </Link>
       </SCartFooter>

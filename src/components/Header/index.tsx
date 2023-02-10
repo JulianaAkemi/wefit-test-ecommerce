@@ -1,6 +1,6 @@
 
-import Cart from 'components/Cart';
 import Link from 'next/link';
+import Cart from 'components/Cart';
 import { SHeader, Logo } from './styles';
 
 const Header = () => {

@@ -2,17 +2,31 @@ import ProductCard from 'components/ProductCard';
 import { SGallery } from './styles';
 
 interface GalleryProps {
-  products: Array<{ title: string; image: string; id: number }>;
+  products: Array<{
+    title: string;
+    image: string;
+    id: number;
+    quantity: number;
+    price: number;
+  }>;
 }
 
 const Gallery = ({ products }: GalleryProps) => {
-	return (
-		<SGallery>
+  return (
+    <SGallery>
       {products.map((product) => {
-				const { title, id, image } = product;
+        const { title, id, image, quantity } = product;
 
-				return <ProductCard title={title} key={id} image={image} productQuantity={0}/>}
-			)}
+        return (
+          <ProductCard
+            title={title}
+            key={id}
+            image={image}
+            productQuantity={quantity}
+            product={product}
+          />
+        );
+      })}
     </SGallery>
   );
 };

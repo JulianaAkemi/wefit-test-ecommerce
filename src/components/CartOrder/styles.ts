@@ -16,6 +16,7 @@ export const SCartOrder = styled.main`
     margin: 24px auto;
     padding: 24px;
     gap: 0;
+    height: unset;
   }
 `;
 

@@ -1,11 +1,7 @@
 import CheckoutSuccess from '../components/CheckoutSuccess';
 
 const CheckoutSuccessPage = () => {
-  return (
-    <>
-      <CheckoutSuccess />
-    </>
-  );
+  return <CheckoutSuccess />;
 };
 
 export default CheckoutSuccessPage;

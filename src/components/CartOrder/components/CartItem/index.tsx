@@ -1,16 +1,19 @@
 import Image from 'next/image';
 import Subtotal from '../Subtotal';
+import { useCart } from "../../../../hooks/useCart";
+import { Product } from 'types/product.types';
 import formatCurrency from '../../../../utils/formatCurrency';
 import TrashCan from '../../../../../assets/TrashCan.svg';
 import { SCartItem, SItemInfo, SImageWrapper, STitle } from './styles';
 
 interface CartItemProps {
-  title: string;
-  image: string;
-  price: number;
+	product: Product;
 }
 
-const CartItem = ({ title, image, price }: CartItemProps) => {
+const CartItem = ({ product }: CartItemProps) => {
+	const { title, image, price, quantity } = product;
+	const { deleteItem } = useCart();
+
   return (
     <SCartItem>
       <SImageWrapper>
@@ -28,9 +31,10 @@ const CartItem = ({ title, image, price }: CartItemProps) => {
           alt="Remover Item do Carrinho"
           width={16}
           height={18}
+					onClick={() => deleteItem(product)}
         />
 
-        <Subtotal quantity={1} price={price} />
+        <Subtotal quantity={quantity} price={price} product={product} />
       </SItemInfo>
     </SCartItem>
   );
